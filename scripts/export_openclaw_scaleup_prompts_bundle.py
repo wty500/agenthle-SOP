@@ -1,11 +1,13 @@
 import os, json, shutil, zipfile
 from pathlib import Path
 
-workspace = Path(r'C:\Users\User\.openclaw\workspace')
-root = workspace / 'benchmark'
-out_root = workspace / 'benchmark' / 'new_tasks' / 'handoff_packages'
+repo_root = Path(__file__).resolve().parents[1]
+benchmark_root = Path(os.environ.get('AGENTHLE_BENCHMARK_ROOT', repo_root / 'examples' / 'benchmark_stub'))
+out_root = Path(os.environ.get('OPENCLAW_SCALEUP_OUT', repo_root / 'artifacts'))
 out_dir = out_root / 'openclaw_scaleup_prompts_bundle_2026-04-04'
 out_zip = out_root / 'openclaw_scaleup_prompts_bundle_2026-04-04.zip'
+
+root = benchmark_root
 
 if out_dir.exists():
     shutil.rmtree(out_dir)

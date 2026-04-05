@@ -10,3 +10,5 @@
    - `docs/gpt5pro_prompt_sop_for_domain_packs.md`
 5. Before packaging tasks for public use, run a prompt-source-leak scan and manually review any hits.
 6. Use `scripts/` as templates for packaging domain bundles and manifests.
+7. If you use the export helpers, point `AGENTHLE_BENCHMARK_ROOT` at your local benchmark root; optionally set `OPENCLAW_SCALEUP_OUT` for the output directory.
+8. Ignore absolute paths shown in historical `reports/` files unless you are explicitly auditing the source machine's past outputs.

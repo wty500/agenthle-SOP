@@ -24,4 +24,5 @@ This repo packages the current OpenClaw profile + AgentHLE SOP + prompt hygiene 
 - Update `openclaw_profile/USER.md` for the new operator.
 - Review `openclaw_profile/SOUL.md` and `AGENTS.md` for local behavior.
 - Keep the anti-leak prompt policy intact.
-- Adjust scripts for the new workspace root if needed.
+- Set `AGENTHLE_BENCHMARK_ROOT` and optionally `OPENCLAW_SCALEUP_OUT` when using export scripts on a different machine.
+- Treat paths embedded in `reports/` as historical audit traces from the source machine, not as required runtime paths for the new machine.
